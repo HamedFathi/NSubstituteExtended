@@ -2,6 +2,14 @@
 
 `NSubstituteExtended` is a library to extend [NSubstitute](https://github.com/nsubstitute/NSubstitute) functionalities.
 
+### [Nuget](https://www.nuget.org/packages/NSubstituteExtended)
+
+```
+Install-Package NSubstituteExtended
+
+dotnet add package NSubstituteExtended
+```
+
 ### Protected support
 
 `Protected` extension method helps you to mock protected methods.
