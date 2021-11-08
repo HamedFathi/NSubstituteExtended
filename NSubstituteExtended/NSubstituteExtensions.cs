@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Reflection;
 
 namespace NSubstitute
@@ -10,6 +11,12 @@ namespace NSubstitute
             var type = target.GetType();
             var method = type
                 .GetMethods(BindingFlags.NonPublic | BindingFlags.Instance).Single(x => x.Name == methodName);
+
+            if (!method.IsVirtual)
+            {
+                throw new Exception("The method must be a virtual member.");
+            }
+
             return method.Invoke(target, args);
         }
     }
